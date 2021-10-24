@@ -28,4 +28,20 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/portfolio', function () {
+    return Inertia::render('Portfolio');
+})->middleware(['auth', 'verified'])->name('portfolio');
+
+Route::get('/markets', function () {
+    return Inertia::render('Markets');
+})->middleware(['auth', 'verified'])->name('markets');
+
+Route::get('/users/show', function () {
+    return Inertia::render('Users/Show');
+})->middleware(['auth', 'verified'])->name('users.show');
+
+Route::get('/coins/show', function () {
+    return Inertia::render('Coins/Show');
+})->middleware(['auth', 'verified'])->name('coins.show');
+
 require __DIR__.'/auth.php';
